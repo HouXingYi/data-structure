@@ -1,0 +1,19 @@
+{
+  "name": "data-structure",
+  "version": "1.0.0",
+  "description": "练习用JavaScript写数据结构",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "server" : "webpack-dev-server --inline --config webpack.config.js"
+  },
+  "author": "houxingyi",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
