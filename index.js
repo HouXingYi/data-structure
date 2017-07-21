@@ -9,19 +9,40 @@ class Data {
     }
     init(){
 
-        //栈
+        //栈 利用push()与pop()  先进后出 (LIFO)
         this.Stack = require("./js/1.stack.js");
         // this.stack();
 
-        //队列
+        //队列  利用push()与shift()  先进先出 (FIFO / First In First Out)
         this.queuegroup = require("./js/2.queue.js");
         // this.queue();
         // this.priorityQueue();
         // this.loopQueue();
 
-        //链表
-        this.LinkedList = require("./js/3.LinkedList.js");
-        // this.linkedList();
+        //链表  每个元素由一个存储元素本身的节点和一个指向下一个元素的引用组成，（也就是element和next）
+        this.linkedListGroup = require("./js/3.LinkedList.js");
+        // this.linkedList();   //普通链表,单项列表,prev为null
+        //循环链表,暂无演示
+
+
+        //集合
+        this.Set = require("./js/4.set.js");
+        // this.set();
+        //对集合可以进行如下操作
+        //并集,交集,差集,子集(感觉像纯数学概念)(不写演示代码了)
+
+
+        //字典 字典是以{ key: value }的形式存储数据  //JS的对象就是字典，字典也叫映射
+        this.Dictionary = require("./js/5.dictionary.js");
+        this.dictionary();
+
+        //散列
+
+        
+
+
+
+
         
     }
     //栈   利用push()与pop()
@@ -76,7 +97,7 @@ class Data {
     }
     //链表
     linkedList(){
-        const linkedList = new this.LinkedList();
+        const linkedList = new this.linkedListGroup.LinkedList();
         linkedList.append(2)
         linkedList.append(6)
         linkedList.append(24)
@@ -84,6 +105,34 @@ class Data {
         linkedList.insert(3, 18)
         console.log(linkedList)
     }    
+
+    //集合
+    set(){
+        const set = new this.Set();
+        set.add(1)
+        console.log(set.values)  // ["1"] 
+        console.log(set.has(1))  // true 
+        console.log(set.size) // 1 
+        set.add(2) 
+        console.log(set.values)  // ["1", "2"] 
+        console.log(set.has(2))  // true 
+        console.log(set.size) // 2 
+        set.remove(1) 
+        console.log(set.values) // ["2"] 
+        set.remove(2) 
+        console.log(set.values) // []
+    }
+
+    dictionary(){
+        const dictionary = new this.Dictionary()
+        dictionary.set('Gandalf', 'gandalf@email.com')
+        dictionary.set('John', 'johnsnow@email.com')
+        dictionary.set('Tyrion', 'tyrion@email.com')
+        console.log(dictionary)
+        console.log(dictionary.keys)
+        console.log(dictionary.values)
+        console.log(dictionary.items)
+    }
 
 }
 
