@@ -1,5 +1,4 @@
 
-
 //es6中get是当访问属性的时候触发，set是当改变属性的时候触发
 //利用Quakka查看效果  ctrl+shift+p   start on current file
 
@@ -34,15 +33,18 @@ class Data {
 
         //字典 字典是以{ key: value }的形式存储数据  //JS的对象就是字典，字典也叫映射
         this.Dictionary = require("./js/5.dictionary.js");
-        this.dictionary();
+        // this.dictionary();
 
         //散列
+        this.HashTable = require("./js/6.HashTable.js");
+        // this.hashTable();
 
-        
+        //树
+        this.Tree = require("./js/7.tree.js");
+        // this.tree();
 
-
-
-
+        //排序与搜索
+        this.SortAndSearch = require("./js/8.sort.js");
         
     }
     //栈   利用push()与pop()
@@ -132,6 +134,51 @@ class Data {
         console.log(dictionary.keys)
         console.log(dictionary.values)
         console.log(dictionary.items)
+    }
+    hashTable(){
+
+        const hash = new this.HashTable()
+        hash.put('Surmon', 'surmon.me@email.com') // 15 - Surmon
+        hash.put('John', 'johnsnow@email.com') // 29 - John
+        hash.put('Tyrion', 'tyrion@email.com') // 16 - Tyrion
+        // 测试get方法
+        console.log(hash.get('Surmon')) // surmon.me@email.com
+        console.log(hash.get('Loiane')) // undefined
+        console.log(hash)
+
+        //散列冲突等，跳过
+
+    }
+    tree(){
+
+        const tree = new this.Tree();
+        tree.insert(11)
+        tree.insert(7)
+        tree.insert(5)
+        tree.insert(3)
+        tree.insert(9)
+        tree.insert(8)
+        tree.insert(10)
+        tree.insert(13)
+        tree.insert(12)
+        tree.insert(14)
+        tree.insert(20)
+        tree.insert(18)
+        tree.insert(25)
+        console.log(tree);
+
+        console.log("中序遍历Start");
+        tree.inOrderTraverse(value => {console.log(value)});
+        console.log("中序遍历End");
+
+        console.log("先序遍历Start");
+        tree.preOrderTraverse(value => {console.log(value)});
+        console.log("先序遍历End");
+
+        console.log("后序遍历Start");
+        tree.postOrderTraverse(value => {console.log(value)});
+        console.log("后序遍历End");
+
     }
 
 }
