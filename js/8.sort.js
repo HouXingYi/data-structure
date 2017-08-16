@@ -12,6 +12,8 @@ var items = (function(){
 })();
 console.log(items);
 
+
+
 //冒泡排序 比较任何两个相邻的项，如果第一个比第二个大，则交换它们
 Array.prototype.bubbleSort = function() {
     for (let i = 0; i < this.length; i++) {
@@ -24,6 +26,8 @@ Array.prototype.bubbleSort = function() {
         }
     }
 }
+
+
 
 //选择排序  找到数据结构中的最小值并 将其放置在第一位，接着找到第二小的值并将其放在第二位，以此类推
 Array.prototype.selectionSort = function() {
@@ -44,6 +48,8 @@ Array.prototype.selectionSort = function() {
     return this
 }
 
+
+
 //插入排序
 Array.prototype.insertionSort = function() {
     let j
@@ -60,6 +66,8 @@ Array.prototype.insertionSort = function() {
     }
     return this
 }
+
+
 
 //归并排序
 Array.prototype.mergeSort = function() {
@@ -93,6 +101,8 @@ Array.prototype.mergeSort = function() {
     }
     return mergeSortRec(this)
 }
+
+
 
 //快速排序
 Array.prototype.quickSort = function() {
